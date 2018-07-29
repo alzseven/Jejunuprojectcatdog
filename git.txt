@@ -1,0 +1,6 @@
+git add .
+git commit -m "TextSample"
+git push
+
+
+git pull
