@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 492}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 492}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 442}
   m_MaxSize: {x: 22012, y: 10021}
   vertical: 0
-  controlID: 2271
+  controlID: 10
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 2295
+  controlID: 109
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -365,14 +365,14 @@ MonoBehaviour:
     height: 464
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 343.9219889235605
+  lastFramingTime: 683.2430816697415
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -21.346191, y: 32.51004, z: -23.849995}
+    m_Target: {x: -38.2884, y: -5.6316376, z: -28.163416}
     speed: 2
-    m_Value: {x: -21.346191, y: 32.51004, z: -23.849995}
+    m_Value: {x: -38.2884, y: -5.6316376, z: -28.163416}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -400,13 +400,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.11332331, y: -0.71404064, z: 0.11889769, w: 0.6805638}
+    m_Target: {x: -0.21617082, y: 0.714007, z: -0.25008148, w: -0.6171899}
     speed: 2
-    m_Value: {x: -0.11332331, y: 0.71404064, z: -0.11889769, w: -0.6805638}
+    m_Value: {x: -0.21617082, y: 0.714007, z: -0.25008148, w: -0.6171899}
   m_Size:
-    m_Target: 167.13797
+    m_Target: 111.29277
     speed: 2
-    m_Value: 167.13797
+    m_Value: 111.29277
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -531,7 +531,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 56fafffff0fbffff00000000
+    m_ExpandedIDs: f0fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -550,7 +550,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 9}
     m_SearchString: 
   m_ExpandedScenes:
-  - InGame
+  - SampleScene
   m_CurrenRootInstanceID: 0
   m_LockTracker:
     m_IsLocked: 0
@@ -592,20 +592,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Animator
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Animator
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\DevelopStorage\Unity\CatDog
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e60b0000
-    m_LastClickedID: 3046
-    m_ExpandedIDs: 00000000e6080000c6090000ba0a0000642e0000662e0000682e000000ca9a3bffffff7f
+    m_SelectedIDs: 760b0000
+    m_LastClickedID: 2934
+    m_ExpandedIDs: 00000000ea090000340a00009e0b0000ea0c0000940e0000383000003a3000003c30000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -633,7 +633,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e6080000c6090000ba0a0000642e0000662e0000682e000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000ea090000340a00009e0b0000ea0c0000940e0000383000003a3000003c300000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
