@@ -308,9 +308,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\MouseCtrlManager.cs" />
     <Compile Include="Assets\Scripts\NewInputPlayer.cs" />
     <Compile Include="Assets\Scripts\NewMngPlayer.cs" />
     <Compile Include="Assets\Scripts\NewMovement.cs" />
+    <Compile Include="Assets\Scripts\SpawnManager.cs" />
+    <Compile Include="Assets\Scripts\UnitController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\PostProcessing-2\PostProcessing-2\PostProcessing\Shaders\ACES.hlsl" />
@@ -376,8 +379,6 @@
     <None Include="Assets\PostProcessing-2\PostProcessing-2\PostProcessing\Shaders\Sampling.hlsl" />
     <None Include="Assets\PostProcessing-2\PostProcessing-2\PostProcessing\Shaders\StdLib.hlsl" />
     <None Include="Assets\PostProcessing-2\PostProcessing-2\PostProcessing\Shaders\xRLib.hlsl" />
-    <None Include="Assets\Shaders\TSF.shader" />
-    <None Include="Assets\Shaders\TSFOutline.shader" />
     <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Readme.txt" />
     <None Include="Assets\Standard Assets\Effects\Projectors\Guidelines.txt" />
@@ -385,7 +386,9 @@
     <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
     <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
     <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
+    <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic-Alpha.shader" />
     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
+    <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline-Alpha.shader" />
     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />

@@ -7,6 +7,10 @@ public class NewInputPlayer : MonoBehaviour
     public bool IsPressedMouseButton { get { return isPressedMouseButton; } }
     public Vector3 GetTargetPos { get { return getTargetPos; } }
 
+
+    
+
+
     void Update()
     {
         isPressedMouseButton = false;
@@ -16,11 +20,11 @@ public class NewInputPlayer : MonoBehaviour
         {
             getTargetPos = hit.point;
         }
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             isPressedMouseButton = true;
             
 
-        }
+        }*/
     }
 }

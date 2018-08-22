@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Toon/Lit" {
 	Properties {
 		_Color ("Main Color", Color) = (0.5,0.5,0.5,1)
@@ -5,9 +7,11 @@ Shader "Toon/Lit" {
 		_Ramp ("Toon Ramp (RGB)", 2D) = "gray" {} 
 	}
 
+
 	SubShader {
 		Tags { "RenderType"="Opaque" }
 		LOD 200
+
 		
 CGPROGRAM
 #pragma surface surf ToonRamp
