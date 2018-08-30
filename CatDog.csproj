@@ -312,6 +312,7 @@
     <Compile Include="Assets\Scripts\NewInputPlayer.cs" />
     <Compile Include="Assets\Scripts\NewMngPlayer.cs" />
     <Compile Include="Assets\Scripts\NewMovement.cs" />
+    <Compile Include="Assets\Scripts\Only4Ground.cs" />
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
     <Compile Include="Assets\Scripts\UnitController.cs" />
   </ItemGroup>
