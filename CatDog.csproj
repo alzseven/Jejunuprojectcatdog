@@ -308,6 +308,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\GetMouse.cs" />
     <Compile Include="Assets\Scripts\MouseCtrlManager.cs" />
     <Compile Include="Assets\Scripts\NewInputPlayer.cs" />
     <Compile Include="Assets\Scripts\NewMngPlayer.cs" />
@@ -315,6 +316,7 @@
     <Compile Include="Assets\Scripts\Only4Ground.cs" />
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
     <Compile Include="Assets\Scripts\UnitController.cs" />
+    <Compile Include="Assets\Scripts\UnitLifeCycle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\PostProcessing-2\PostProcessing-2\PostProcessing\Shaders\ACES.hlsl" />
