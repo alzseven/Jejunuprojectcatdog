@@ -10,7 +10,7 @@ public class MouseCtrlManager : MonoBehaviour
     private Vector3 V3TargPos = Vector3.zero;
     public Vector3 V3targPos { get { return V3TargPos; } }
 
-    Renderer ObstacleRenderer;
+    public Renderer ObstacleRenderer;
 
     // Use this for initialization
     void Start()

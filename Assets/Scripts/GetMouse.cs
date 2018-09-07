@@ -13,9 +13,10 @@ public class GetMouse : MonoBehaviour {
         isPressedMouseButton = false;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000f))
+        if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000f)&& hit.collider.tag == "ground")
         {
            getTargetPos = hit.point;
+           //Debug.Log(hit.transform.name);
         }
         if (Input.GetMouseButtonDown(0))
         {

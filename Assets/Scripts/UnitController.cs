@@ -17,12 +17,15 @@ public class UnitController : MonoBehaviour {
     public Material M1, M2, M3;
     private Vector3 VFront = Vector3.zero;
 
+    Renderer Rd;
+
     // Use this for initialization
     void Start () {
 
         MCtrl = gameObject.AddComponent<MouseCtrlManager>();
+        Rd = this.gameObject.GetComponentInChildren<Renderer>();
         state = State.Ready;
-        Color M1col = M1.color;
+        /*Color M1col = M1.color;
         Color M2col = M2.color;
         Color M3col = M3.color;
         M1col.a = 0.4f;
@@ -30,7 +33,7 @@ public class UnitController : MonoBehaviour {
         M3col.a = 0.4f;
         M1.color = M1col;
         M2.color = M2col;
-        M3.color = M3col;
+        M3.color = M3col;*/
     }
 
     // Update is called once per frame
@@ -55,7 +58,7 @@ public class UnitController : MonoBehaviour {
             state = State.Move;
             isObjectMoving = false;
 
-            Color M1col = M1.color;
+            /*Color M1col = M1.color;
             Color M2col = M2.color;
             Color M3col = M3.color;
             M1col.a = 1f;
@@ -63,7 +66,7 @@ public class UnitController : MonoBehaviour {
             M3col.a = 1f;
             M1.color = M1col;
             M2.color = M2col;
-            M3.color = M3col;
+            M3.color = M3col;*/
         }
         if (state == State.Move)
         {
