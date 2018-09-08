@@ -100,7 +100,7 @@ ModelImporter:
     4300000: MascotHeadGeo
     4300002: MascotEyesGeo
     4300004: MascotBodyGeo
-    7400000: mixamo.com
+    7400000: samba_dancing_1
     9500000: //RootNode
     13700000: MascotBodyGeo
     13700002: MascotEyesGeo
@@ -111,17 +111,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Body
-    second: {fileID: 2100000, guid: 92708b6a9094b4b5ea1c08529f33934a, type: 2}
+    second: {fileID: 2100000, guid: c673f7fb167adf44884fe03d0aed27da, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: EyeWhite
-    second: {fileID: 2100000, guid: 297e15c9006e44893b5759e90794c031, type: 2}
+    second: {fileID: 2100000, guid: faf08ac4ae1a13f4faf17946c2e19129, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Pupils
-    second: {fileID: 2100000, guid: 91497e0ab148f4341bf296ca479ce529, type: 2}
+    second: {fileID: 2100000, guid: 2127edc328dcdf743a37a41f499efe26, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -151,7 +151,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: samba_dancing_1
+      takeName: mixamo.com
+      firstFrame: 0
+      lastFrame: 546
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
