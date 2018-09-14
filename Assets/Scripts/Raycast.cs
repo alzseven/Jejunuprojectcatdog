@@ -15,7 +15,7 @@ public class Raycast : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000f))
         {
-            Debug.Log(hit.transform.name);
+           // Debug.Log(hit.transform.name);
             if (hit.transform.name == "CatBackground")
             {
                 anime.SetBool("CatOnMouse", true);
