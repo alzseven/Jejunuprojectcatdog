@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Cat or Dog.unity
+- path: Assets/Scenes/Deck.unity
   isLoaded: 1
   isActive: 1
