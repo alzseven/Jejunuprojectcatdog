@@ -58,5 +58,6 @@ public class Deck : MonoBehaviour {
 
         //Player.json 안에 playerData의 모든 값을 String으로 기록해라
         File.WriteAllText(Application.dataPath + "/Litjson/Player.json", playerData.ToString());
+        UnityEditor.AssetDatabase.Refresh();
     }
 }
