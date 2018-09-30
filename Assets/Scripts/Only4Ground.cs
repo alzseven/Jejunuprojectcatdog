@@ -20,7 +20,7 @@ public class Only4Ground : MonoBehaviour
 
         Mat.color = matColor;
     }*/
-    private void Posi()
+    void Update()
     {
         SpawnPos=this.transform.position;
     }
