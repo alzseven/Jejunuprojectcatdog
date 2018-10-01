@@ -35,8 +35,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4269335724866292}
   - component: {fileID: 95925592890696884}
-  - component: {fileID: 65382725541131186}
-  - component: {fileID: 114682602457284328}
   - component: {fileID: 114553015427493832}
   - component: {fileID: 114076424704844916}
   - component: {fileID: 114852383624895552}
@@ -1601,18 +1599,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: ab1be3ed24e4c804ebec16383d324f18, type: 3}
---- !u!65 &65382725541131186
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1043871024511146}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 4, z: 2}
-  m_Center: {x: 0, y: 2, z: 0}
 --- !u!65 &65430020114367994
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1673,26 +1659,6 @@ MonoBehaviour:
   AttackTime: 2
   MoveSpeed: 5
   ObjectType: 1
---- !u!114 &114682602457284328
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1043871024511146}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b00f76d3c5a27c1499a6a6aeddf3ebd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RDL: 0
-  now: 0
-  Speed: 2
-  maxHealth: 100
-  Range: 5
-  AttackPower: 10
-  AttackSpeed: 2
-  IsHit: 0
-  Health: 0
 --- !u!114 &114852383624895552
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -657,8 +657,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4345594965782506}
   - component: {fileID: 95029815313349862}
-  - component: {fileID: 65293848322634572}
-  - component: {fileID: 114035703597899002}
   - component: {fileID: 114356983441026602}
   - component: {fileID: 114927805072567084}
   - component: {fileID: 114279004596360760}
@@ -1570,18 +1568,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1081153169825816}
   m_Mesh: {fileID: 4300004, guid: f10d56225061c3c46bc0b2a3f5a153ab, type: 3}
---- !u!65 &65293848322634572
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1750468260011644}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 4, z: 2}
-  m_Center: {x: 0, y: 2, z: 0}
 --- !u!95 &95029815313349862
 Animator:
   serializedVersion: 3
@@ -1600,26 +1586,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114035703597899002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1750468260011644}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b00f76d3c5a27c1499a6a6aeddf3ebd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RDL: 0
-  now: 1
-  Speed: 0
-  maxHealth: 50
-  Range: 0
-  AttackPower: 0
-  AttackSpeed: 0
-  IsHit: 0
-  Health: 0
 --- !u!114 &114279004596360760
 MonoBehaviour:
   m_ObjectHideFlags: 1

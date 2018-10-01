@@ -317,6 +317,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\cameraMovement.cs" />
+    <Compile Include="Assets\Scripts\Cat or Dog\Raycast.cs" />
     <Compile Include="Assets\Scripts\Cat or Dog\SceneMove.cs" />
     <Compile Include="Assets\Scripts\Deck\CardDrag.cs" />
     <Compile Include="Assets\Scripts\Deck\Click.cs" />
@@ -324,15 +325,14 @@
     <Compile Include="Assets\Scripts\Deck\DeckManager.cs" />
     <Compile Include="Assets\Scripts\Deck\Slot.cs" />
     <Compile Include="Assets\Scripts\GameStart\InputManager.cs" />
-    <Compile Include="Assets\Scripts\GetMouse.cs" />
     <Compile Include="Assets\Scripts\Healthbar.cs" />
-    <Compile Include="Assets\Scripts\ObjectManager.cs" />
+    <Compile Include="Assets\Scripts\InGame\GetMouse.cs" />
+    <Compile Include="Assets\Scripts\InGame\ObjectManager.cs" />
+    <Compile Include="Assets\Scripts\InGame\UnitAttribute.cs" />
+    <Compile Include="Assets\Scripts\InGame\UnitStateMachine.cs" />
     <Compile Include="Assets\Scripts\Only4Ground.cs" />
-    <Compile Include="Assets\Scripts\Raycast.cs" />
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
-    <Compile Include="Assets\Scripts\UnitAttribute.cs" />
     <Compile Include="Assets\Scripts\UnitLifeCycle.cs" />
-    <Compile Include="Assets\Scripts\UnitStateMachine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\PostProcessing-2\PostProcessing-2\PostProcessing\Shaders\ACES.hlsl" />
