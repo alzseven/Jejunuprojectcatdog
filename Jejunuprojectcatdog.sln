@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Postprocessing.Runtime", "Unity.Postprocessing.Runtime.csproj", "{8230E842-5326-8B7E-6D4D-3755494AE667}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jejunuprojectcatdog", "Unity.Postprocessing.Runtime.csproj", "{8230E842-5326-8B7E-6D4D-3755494AE667}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{2079BF26-6678-E522-A234-E91822AD701F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jejunuprojectcatdog", "Assembly-CSharp.csproj", "{2079BF26-6678-E522-A234-E91822AD701F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Postprocessing.Editor", "Unity.Postprocessing.Editor.csproj", "{4350CC85-03C2-A571-C223-1BEAE8E34E80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jejunuprojectcatdog", "Unity.Postprocessing.Editor.csproj", "{4350CC85-03C2-A571-C223-1BEAE8E34E80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
