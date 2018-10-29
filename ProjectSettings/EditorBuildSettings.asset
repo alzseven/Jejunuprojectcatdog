@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Cat or Dog.unity
+    guid: fa47faf49afb2a64bb0d95c3b7f90f65
+  - enabled: 1
     path: Assets/Scenes/InGame.unity
     guid: 85525d099c4595b4b82344c4c10ddd30
   m_configObjects: {}

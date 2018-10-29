@@ -1,37 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-<<<<<<< HEAD
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jejunuprojectcatdog", "Unity.Postprocessing.Runtime.csproj", "{8230E842-5326-8B7E-6D4D-3755494AE667}"
-=======
-<<<<<<< HEAD
-# Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jejunuprojectcatdog", "Unity.Postprocessing.Runtime.csproj", "{8230E842-5326-8B7E-6D4D-3755494AE667}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Postprocessing.Runtime", "Unity.Postprocessing.Runtime.csproj", "{8230E842-5326-8B7E-6D4D-3755494AE667}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jejunuprojectcatdog", "Assembly-CSharp.csproj", "{2079BF26-6678-E522-A234-E91822AD701F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{2079BF26-6678-E522-A234-E91822AD701F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jejunuprojectcatdog", "Unity.Postprocessing.Editor.csproj", "{4350CC85-03C2-A571-C223-1BEAE8E34E80}"
-=======
-# Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Postprocessing.Runtime", "Unity.Postprocessing.Runtime.csproj", "{49FCAFB7-7D0A-B3F6-2171-B4248A94EC21}"
->>>>>>> aee03a4253263124d133c25c46b6ec9815dd1b86
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jejunuprojectcatdog", "Assembly-CSharp.csproj", "{2079BF26-6678-E522-A234-E91822AD701F}"
-EndProject
-<<<<<<< HEAD
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jejunuprojectcatdog", "Unity.Postprocessing.Editor.csproj", "{4350CC85-03C2-A571-C223-1BEAE8E34E80}"
-=======
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jejunuprojectcatdog", "Jejunuprojectcatdog.csproj", "{5EAC1B10-16AE-A284-90E6-08F8705A0D0D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.PackageManagerUI.Editor", "Unity.PackageManagerUI.Editor.csproj", "{6877705C-FBD9-0C4F-5AFB-6FB431E5D39D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Postprocessing.Editor", "Unity.Postprocessing.Editor.csproj", "{CBEC4DCB-1B2B-E03B-0387-393C59967E8B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.TextMeshPro.Editor", "Unity.TextMeshPro.Editor.csproj", "{3A848AB7-9891-EDDA-D555-BF184C2F81F4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEditor.StandardEvents", "UnityEditor.StandardEvents.csproj", "{6800202F-4402-D405-F8CB-03DC7BD78B92}"
->>>>>>> 1c10b3aac7df1b206c1cc2fa00c194f7ea2b1bb6
->>>>>>> aee03a4253263124d133c25c46b6ec9815dd1b86
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Postprocessing.Editor", "Unity.Postprocessing.Editor.csproj", "{4350CC85-03C2-A571-C223-1BEAE8E34E80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

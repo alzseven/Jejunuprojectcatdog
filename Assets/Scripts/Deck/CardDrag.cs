@@ -38,7 +38,6 @@ public class CardDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             transform.position = startPosition;
             transform.SetParent(startParent);
         }
-
         GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
 
