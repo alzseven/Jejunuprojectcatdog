@@ -17,7 +17,7 @@ namespace Prototype.NetworkLobby
         private GameObject[] allcard=new GameObject[10];
 
         //저장해야할 변수들
-        static string[] decklist=new string[5];
+        static public string[] decklist=new string[5];
         static bool cat = true;
 
         protected RectTransform currentPanel;
