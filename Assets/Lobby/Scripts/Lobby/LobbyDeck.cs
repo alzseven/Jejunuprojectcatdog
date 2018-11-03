@@ -138,7 +138,10 @@ namespace Prototype.NetworkLobby
                 Debug.Log("덱저장완료");
                 deckPanel.gameObject.SetActive(false);
                 lobbyPanel.gameObject.SetActive(true);
-                GameObject.Find("PlayerInfo(Clone)").GetComponent<LobbyPlayer>().ToggleJoinButton(true,true);
+                GameObject[] tempobj = GameObject.FindGameObjectsWithTag("PlayerInfo");
+                tempobj[0].GetComponent<LobbyPlayer>().ToggleJoinButton(true,true);
+                tempobj[1].GetComponent<LobbyPlayer>().ToggleJoinButton(true,true);
+
             }
             else
             {
