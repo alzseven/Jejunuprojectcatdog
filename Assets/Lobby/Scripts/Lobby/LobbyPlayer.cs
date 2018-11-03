@@ -33,8 +33,6 @@ namespace Prototype.NetworkLobby
         public string playerName = "";
         [SyncVar(hook = "OnMyColor")]
         public Color playerColor = Color.white;
-        [SyncVar(hook = "OnMyDeck")]
-        public string[] playerDeck = new string[5];     //다음 씬에 전송할 변수
 
         public Color OddRowColor = new Color(250.0f / 255.0f, 250.0f / 255.0f, 250.0f / 255.0f, 1.0f);
         public Color EvenRowColor = new Color(180.0f / 255.0f, 180.0f / 255.0f, 180.0f / 255.0f, 1.0f);
@@ -210,7 +208,6 @@ namespace Prototype.NetworkLobby
 
         public void OnReadyClicked()
         {
-            playerDeck = LobbyDeck.decklist;        //덱리스트를 전송할 playerDeck 변수에 저장
             SendReadyToBeginMessage();
         }
 
