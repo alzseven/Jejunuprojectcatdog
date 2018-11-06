@@ -26,7 +26,6 @@ namespace Prototype.NetworkLobby
 
         public void OnClickJoin()
         {
-            catdogPanel.gameObject.SetActive(true);
             lobbyManager.ChangeTo(lobbyPanel);
 
             lobbyManager.networkAddress = ipInput.text;

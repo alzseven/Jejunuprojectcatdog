@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1324585507037628}
+  m_IsPrefabParent: 1
+--- !u!1 &1324585507037628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4734133480697002}
+  - component: {fileID: 114953843968252112}
+  - component: {fileID: 114575749016764174}
+  - component: {fileID: 114277956681420924}
+  m_Layer: 0
+  m_Name: NewSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4734133480697002
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1324585507037628}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.848858, y: 3.9469872, z: -83.54513}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114277956681420924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1324585507037628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 912431843f599ae4ebb46adeca35117c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  masterTimer: 0
+  sourceText: {fileID: 0}
+  s_perTime: 1
+  OneSecCount: 0
+  ServerTime: {fileID: 0}
+--- !u!114 &114575749016764174
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1324585507037628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 11
+    i1: 119
+    i2: 173
+    i3: 2
+    i4: 229
+    i5: 203
+    i6: 137
+    i7: 68
+    i8: 105
+    i9: 174
+    i10: 43
+    i11: 18
+    i12: 102
+    i13: 110
+    i14: 178
+    i15: 50
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
+--- !u!114 &114953843968252112
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1324585507037628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc18cb5f58b3ff847a7855654b00a5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TeamColor: {r: 0, g: 0, b: 0, a: 0}
+  HpBarName: 
+  DeckList:
+  - 
+  - 
+  - 
+  - 
+  - 
+  cat: 0
+  newGameUnitPrefab: {fileID: 1081966240325794, guid: 0bc2bf3812418424ea1733bacf9a1d26,
+    type: 2}
+  Cat: {fileID: 1043871024511146, guid: 236927d108dfab84b88addb48f1d1340, type: 2}
+  source: 0
+  starterObjects: {fileID: 0}
+  isGameStart: 0
+  isPaused: 0
+  TeamID: 0
+  vec: {x: 0, y: 0, z: 0, w: 0}

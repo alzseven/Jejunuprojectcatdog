@@ -26,10 +26,14 @@ namespace Prototype.NetworkLobby
 
         public RectTransform mainMenuPanel;
         public RectTransform lobbyPanel;
+        public RectTransform catdogPanel;
 
         public LobbyInfoPanel infoPanel;
         public LobbyCountdownPanel countdownPanel;
         public GameObject addPlayerButton;
+        public AnimineControl anime;
+        //public Image CatandDog;
+        public LobbyDeck lobbyDeck;
 
         protected RectTransform currentPanel;
 
@@ -56,7 +60,7 @@ namespace Prototype.NetworkLobby
         void Start()
         {
             s_Singleton = this;
-            _lobbyHooks = GetComponent<Prototype.NetworkLobby.LobbyHook>();
+            _lobbyHooks = GetComponent<LobbyHook>();
             currentPanel = mainMenuPanel;
 
             backButton.gameObject.SetActive(false);
@@ -162,6 +166,8 @@ namespace Prototype.NetworkLobby
         {
             backDelegate();
 			topPanel.isInGame = false;
+            if(!gameObject.GetComponent<LobbyDeck>().isActiveAndEnabled)
+                gameObject.GetComponent<LobbyDeck>().enabled = true;
         }
 
         // ----------------- Server management
@@ -346,8 +352,12 @@ namespace Prototype.NetworkLobby
 					allready &= lobbySlots[i].readyToBegin;
 			}
 
-			if(allready)
-				StartCoroutine(ServerCountdownCoroutine());
+            if (allready)
+            {
+                //anime = GetComponent<AnimineControl>();
+                //anime.enabled = false;
+                StartCoroutine(ServerCountdownCoroutine());
+            }
         }
 
         public IEnumerator ServerCountdownCoroutine()
@@ -393,6 +403,7 @@ namespace Prototype.NetworkLobby
         {
             base.OnClientConnect(conn);
 
+            catdogPanel.gameObject.SetActive(true);
             infoPanel.gameObject.SetActive(false);
 
             conn.RegisterHandler(MsgKicked, KickedMessageHandler);

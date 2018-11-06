@@ -741,7 +741,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.1
   apiCompatibilityLevel: 2
   cloudProjectId: 31cd482c-37bd-4df8-9057-b603886861af
-  projectName: Networking Lobby
+  projectName: CatDog
   organizationId: alz7
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0

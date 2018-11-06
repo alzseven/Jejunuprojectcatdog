@@ -7,6 +7,17 @@ TagManager:
   - Fire
   - ground
   - PlayerInfo
+  - Button
+  - StartLocation
+  - Enemy
+  - PlayerHp
+  - Timer
+  - Resource
+  - EnemyHp
+  - UnitHp
+  - UnitCost
+  - UnitAtk
+  - Card
   layers:
   - Default
   - TransparentFX

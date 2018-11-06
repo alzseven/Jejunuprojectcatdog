@@ -75,13 +75,6 @@ namespace Prototype.NetworkLobby
             }
         }
 
-
-        
-        
-
-
-
-
         public Sprite[] CatSprite;
         public Sprite[] DogSprite;
 
@@ -139,8 +132,23 @@ namespace Prototype.NetworkLobby
                 deckPanel.gameObject.SetActive(false);
                 lobbyPanel.gameObject.SetActive(true);
                 GameObject[] tempobj = GameObject.FindGameObjectsWithTag("PlayerInfo");
+                LobbyPlayer[] templobbyplayer = new LobbyPlayer[2];
+                for (int i = 0; i<2; i++)
+                {
+                    templobbyplayer[i] = tempobj[i].GetComponent<LobbyPlayer>();
+                }    
+                for(int i = 0; i<5; i++)
+                {
+                    templobbyplayer[0].decklist[i] = decklist[i];
+                    templobbyplayer[0].cat = cat;
+                    templobbyplayer[1].decklist[i] = decklist[i];
+                    templobbyplayer[1].cat = cat;
+                }
+                
                 tempobj[0].GetComponent<LobbyPlayer>().ToggleJoinButton(true,true);
                 tempobj[1].GetComponent<LobbyPlayer>().ToggleJoinButton(true,true);
+
+                this.enabled = false;
 
             }
             else
@@ -156,6 +164,8 @@ namespace Prototype.NetworkLobby
             decklist[2] = (GameObject.Find("DSlot2").transform.GetChild(0).gameObject.name);
             decklist[3] = (GameObject.Find("DSlot3").transform.GetChild(0).gameObject.name);
             decklist[4] = (GameObject.Find("DSlot4").transform.GetChild(0).gameObject.name);
+            DeleteAllCard();
+            //LobbyPlayer lobbyPlayer = lobbyPlayer.GetComponent<LobbyPlayer>();
         }
 
         public void DeckBackButton()        //DECK패널에 있는 BACK버튼을 눌렀을 경우
