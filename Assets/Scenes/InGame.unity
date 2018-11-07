@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5779487, g: 0.7244604, b: 0.91606045, a: 1}
+  m_IndirectSpecularColor: {r: 0.57797384, g: 0.72444004, b: 0.9160744, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2312,6 +2312,16 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114776839169566956, guid: 40126e43ecdf5df42b6e6ba41e60c9ab,
+        type: 2}
+      propertyPath: m_ShowCustomSorter
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114776839169566956, guid: 40126e43ecdf5df42b6e6ba41e60c9ab,
+        type: 2}
+      propertyPath: m_ShowToolkit
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40126e43ecdf5df42b6e6ba41e60c9ab, type: 2}
   m_IsPrefabParent: 0
@@ -3146,6 +3156,7 @@ GameObject:
   - component: {fileID: 1221042917}
   - component: {fileID: 1221042916}
   - component: {fileID: 1221042915}
+  - component: {fileID: 1221042918}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3198,6 +3209,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1221042918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1221042914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &1229331559
 GameObject:
   m_ObjectHideFlags: 0

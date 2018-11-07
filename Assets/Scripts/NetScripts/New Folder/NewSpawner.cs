@@ -27,12 +27,18 @@ public class NewSpawner : NetworkBehaviour
     [SyncVar] public Color TeamColor;
     [SyncVar] public string HpBarName;
     public string[] DeckList = new string[5];
+    public GameObject[] Card = new GameObject[5];
+    //public GameObject[] CatCardList = new GameObject[10];
+
     [SyncVar] public bool cat;//?
 
     GameTimer GT;
     public GameObject newGameUnitPrefab; //base
-    public GameObject Cat;
+    
     //unit list 
+
+    public GameObject CardUI;
+    public GameObject Underbar;
 
     public float source;
     public NetworkConnection owner;
@@ -62,8 +68,11 @@ public class NewSpawner : NetworkBehaviour
             //gameObject.GetComponentInChildren<Renderer>().material.color = Color.blue;
             gameObject.name = HpBarName;
 
-
-            ClientScene.RegisterPrefab(Cat);
+            for(int i = 0; i < 5; i++)
+            {
+                Card[i] = Resources.Load(DeckList[i]) as GameObject;
+                ClientScene.RegisterPrefab(Card[i]);
+            }
             // NOM = GameObject.Find("NetObjects");
         }
         else
@@ -104,12 +113,11 @@ public class NewSpawner : NetworkBehaviour
         isUnitListEmpty = true;
         //NOTE(Thompson): NewSpawner needs to keep track of where the first game unit is spawned at. This is set in CmdInitialize().
         changes.Clear();
-        ClientScene.RegisterPrefab(newGameUnitPrefab);
-        ClientScene.RegisterPrefab(Cat);
         //?
         //CmdConCheck();
         //, "Prefabs/Base");
         CmdInitialize(gameObject);
+
     }
     IEnumerator WaitForReady()
     {
@@ -353,11 +361,11 @@ public class NewSpawner : NetworkBehaviour
     }
 
     [Command]
-    public void CmdSplitSpawn(GameObject owner)//, NetworkIdentity ownerIdentity)
+    public void CmdSplitSpawn(GameObject spawn,GameObject owner)//, NetworkIdentity ownerIdentity)
     {
         //NetworkIdentity spawnerID = this.GetComponent<NetworkIdentity>();
 
-        GameObject split = Instantiate(Cat, gameObject.transform.position, vec);
+        GameObject split = Instantiate(spawn, gameObject.transform.position, vec);
 
         split.name = "NewGameUnit";
         split.transform.SetParent(transform);
@@ -431,12 +439,12 @@ public class NewSpawner : NetworkBehaviour
     private void HandleButtons()    //Try Button Pressing
     {
 
-        if (Input.GetKeyUp(KeyCode.S))//
+        if (Input.GetKeyUp(KeyCode.Z))//
         {
-            if (Cat.GetComponent<NewGameUnit>().Cost < source)
+            if (Card[0].GetComponent<NewGameUnit>().Cost < source)
             {
-                source -= Cat.GetComponent<NewGameUnit>().Cost;
-                CmdSplitSpawn(gameObject);
+                source -= Card[0].GetComponent<NewGameUnit>().Cost;
+                CmdSplitSpawn(Card[0],gameObject);
             }
             //, gameObject.GetComponent<NetworkIdentity>());
             /*foreach(NewUnitStruct temp in unitList)
@@ -451,6 +459,43 @@ public class NewSpawner : NetworkBehaviour
             //GameObject Base = GameObject.FindGameObjectWithTag("Player");
 
         }
+        if (Input.GetKeyUp(KeyCode.X))//
+        {
+            if (Card[1].GetComponent<NewGameUnit>().Cost < source)
+            {
+                source -= Card[1].GetComponent<NewGameUnit>().Cost;
+                CmdSplitSpawn(Card[1],gameObject);
+            }
+
+        }
+        if (Input.GetKeyUp(KeyCode.C))//
+        {
+            if (Card[2].GetComponent<NewGameUnit>().Cost < source)
+            {
+                source -= Card[2].GetComponent<NewGameUnit>().Cost;
+                CmdSplitSpawn(Card[2],gameObject);
+            }
+
+        }
+        if (Input.GetKeyUp(KeyCode.V))//
+        {
+            if (Card[3].GetComponent<NewGameUnit>().Cost < source)
+            {
+                source -= Card[3].GetComponent<NewGameUnit>().Cost;
+                CmdSplitSpawn(Card[3],gameObject);
+            }
+
+        }
+        if (Input.GetKeyUp(KeyCode.B))//
+        {
+            if (Card[4].GetComponent<NewGameUnit>().Cost < source)
+            {
+                source -= Card[4].GetComponent<NewGameUnit>().Cost;
+                CmdSplitSpawn(Card[4],gameObject);
+            }
+
+        }
+
     }
     private void HandleSelection()
     {
@@ -486,4 +531,7 @@ public class NewSpawner : NetworkBehaviour
             }
         }
     }
+    
+
+
 }

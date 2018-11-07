@@ -43,7 +43,7 @@ public class Click : MonoBehaviour {
     {
         string s = "";
         s = this.name;
-        string jsonStr = File.ReadAllText(Application.dataPath + "/Litjson/Card.json");
+        string jsonStr = File.ReadAllText(Application.dataPath + "Resources/Litjson/Card.json");
         JsonData playerData = JsonMapper.ToObject(jsonStr);
         for (int i = 0; i < playerData.Count; i++)
         {

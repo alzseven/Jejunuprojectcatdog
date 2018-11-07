@@ -14,7 +14,7 @@ namespace Prototype.NetworkLobby
         static short MsgKicked = MsgType.Highest + 1;
 
         static public LobbyManager s_Singleton;
-
+        
 
         [Header("Unity UI Lobby")]
         [Tooltip("Time in second between all players ready & match start")]
@@ -356,6 +356,8 @@ namespace Prototype.NetworkLobby
             {
                 //anime = GetComponent<AnimineControl>();
                 //anime.enabled = false;
+
+                
                 StartCoroutine(ServerCountdownCoroutine());
             }
         }
