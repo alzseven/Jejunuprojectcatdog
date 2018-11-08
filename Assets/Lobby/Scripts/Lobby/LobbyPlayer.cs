@@ -33,7 +33,18 @@ namespace Prototype.NetworkLobby
         public string playerName = "";
         [SyncVar(hook = "OnMyColor")]
         public Color playerColor = Color.white;
-        public string[] decklist = new string[5];
+        [SyncVar]
+        public string decklist0;
+        [SyncVar]
+        public string decklist1;
+        [SyncVar]
+        public string decklist2;
+        [SyncVar]
+        public string decklist3;
+        [SyncVar]
+        public string decklist4;
+        //public string[] decklist = new string[5];
+        [SyncVar]
         public bool cat = true;
 
         public Color OddRowColor = new Color(250.0f / 255.0f, 250.0f / 255.0f, 250.0f / 255.0f, 1.0f);
@@ -307,7 +318,15 @@ namespace Prototype.NetworkLobby
         {
             playerName = name;
         }
-
+        [Command]
+        public void CmdSaveDeck(string[] deck)
+        {
+            decklist0 = deck[0];
+            decklist1 = deck[1];
+            decklist2 = deck[2];
+            decklist3 = deck[3];
+            decklist4 = deck[4];
+        }
         //Cleanup thing when get destroy (which happen when client kick or disconnect)
         public void OnDestroy()
         {
@@ -360,10 +379,12 @@ namespace Prototype.NetworkLobby
 
         public void DeckSave(string[] Tempdeck,bool Tempcat)
         {
-            if (!isLocalPlayer)
-                return;
-            cat = Tempcat;
-            decklist = Tempdeck;
+            if (hasAuthority)
+            {
+                cat = Tempcat;
+                CmdSaveDeck(Tempdeck);
+            }
+            
         }
     }
 }
