@@ -19,7 +19,7 @@ public struct UnitProperties
     public int maxHealth;
     public int teamFactionID;
     public int attackFactor;
-    public int speedFactor;
+    public float speedFactor;
     public float attackCooldownFactor;
     public float alphacolor;
     public Color teamColor;
@@ -39,7 +39,7 @@ public struct NewChanges
     public float newMaxHealth;
     public float newCurrentHealth;
     public int newAttack;
-    public int newSpeed;
+    public float newSpeed;
     public float newAttackCooldown;
     public float alphavalue;
     public Vector3 mousePosition;
@@ -79,7 +79,7 @@ public class NewGameUnit : NetworkBehaviour
     [SerializeField] private int HP;
     public int AttackPower;
     [SerializeField] private float AttackDelay;
-    [SerializeField] private int MoveSpeed;
+    [SerializeField] private float MoveSpeed;
     public int Cost;
     public Sprite sprite;
 
@@ -507,7 +507,7 @@ public class NewGameUnit : NetworkBehaviour
         }
     }
     [Command]
-    public void CmdGoFront(GameObject obj, int speed)
+    public void CmdGoFront(GameObject obj, float speed)
     {
         //Debug.Log("ASdf");
         if (obj != null)
@@ -516,7 +516,7 @@ public class NewGameUnit : NetworkBehaviour
         }
     }
     [ClientRpc]
-    public void RpcGoFront(int speed)
+    public void RpcGoFront(float speed)
     {
         transform.Translate(Vector3.forward.normalized * speed * Time.deltaTime);
     }

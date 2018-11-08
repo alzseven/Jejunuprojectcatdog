@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 148778962}
   - component: {fileID: 148778961}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text2
   m_TagString: UnitCost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -603,7 +603,7 @@ GameObject:
   - component: {fileID: 202972265}
   - component: {fileID: 202972264}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text3
   m_TagString: UnitAtk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -870,7 +870,7 @@ GameObject:
   - component: {fileID: 312105515}
   - component: {fileID: 312105514}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text3
   m_TagString: UnitHp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1150,7 +1150,7 @@ GameObject:
   - component: {fileID: 442105080}
   - component: {fileID: 442105079}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text1
   m_TagString: UnitHp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1292,7 +1292,7 @@ GameObject:
   - component: {fileID: 459090167}
   - component: {fileID: 459090166}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text5
   m_TagString: UnitAtk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1367,7 +1367,7 @@ GameObject:
   - component: {fileID: 508616294}
   - component: {fileID: 508616293}
   m_Layer: 5
-  m_Name: CardImage
+  m_Name: CardImage2
   m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1555,7 +1555,7 @@ GameObject:
   - component: {fileID: 523296868}
   - component: {fileID: 523296867}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text4
   m_TagString: UnitAtk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1766,7 +1766,7 @@ GameObject:
   - component: {fileID: 576016941}
   - component: {fileID: 576016940}
   m_Layer: 5
-  m_Name: CardImage
+  m_Name: CardImage1
   m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2028,7 +2028,7 @@ GameObject:
   - component: {fileID: 683504878}
   - component: {fileID: 683504877}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text4
   m_TagString: UnitHp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2217,7 +2217,7 @@ GameObject:
   - component: {fileID: 787796853}
   - component: {fileID: 787796852}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text4
   m_TagString: UnitCost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2688,7 +2688,7 @@ GameObject:
   - component: {fileID: 1049621832}
   - component: {fileID: 1049621831}
   m_Layer: 5
-  m_Name: CardImage
+  m_Name: CardImage4
   m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3383,7 +3383,7 @@ GameObject:
   - component: {fileID: 1258078894}
   - component: {fileID: 1258078893}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text3
   m_TagString: UnitCost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3457,7 +3457,7 @@ GameObject:
   - component: {fileID: 1258520389}
   - component: {fileID: 1258520388}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text5
   m_TagString: UnitCost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3599,7 +3599,7 @@ GameObject:
   - component: {fileID: 1266284590}
   - component: {fileID: 1266284589}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text1
   m_TagString: UnitAtk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3920,7 +3920,7 @@ GameObject:
   - component: {fileID: 1380489759}
   - component: {fileID: 1380489758}
   m_Layer: 5
-  m_Name: CardImage
+  m_Name: CardImage3
   m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4182,7 +4182,7 @@ GameObject:
   - component: {fileID: 1452943434}
   - component: {fileID: 1452943433}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text1
   m_TagString: UnitCost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4256,7 +4256,7 @@ GameObject:
   - component: {fileID: 1476482726}
   - component: {fileID: 1476482725}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text2
   m_TagString: UnitAtk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4804,7 +4804,7 @@ GameObject:
   - component: {fileID: 1679777309}
   - component: {fileID: 1679777308}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text2
   m_TagString: UnitHp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4998,7 +4998,7 @@ GameObject:
   - component: {fileID: 1724993460}
   - component: {fileID: 1724993459}
   m_Layer: 5
-  m_Name: CardImage
+  m_Name: CardImage5
   m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5753,7 +5753,7 @@ GameObject:
   - component: {fileID: 2044517694}
   - component: {fileID: 2044517693}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text5
   m_TagString: UnitHp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

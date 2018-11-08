@@ -77,50 +77,35 @@ public class NewSpawner : NetworkBehaviour
             //gameObject.GetComponentInChildren<Renderer>().material.color = Color.blue;
             gameObject.name = HpBarName;
             gameObject.tag = "NewSpawner";
-
             GameObject[] UnitHp = new GameObject[5];
-
             UnitHp = GameObject.FindGameObjectsWithTag("UnitHp");
-
             GameObject[] UnitAtk = new GameObject[5];
-
             UnitAtk = GameObject.FindGameObjectsWithTag("UnitAtk");
-
             GameObject[] UnitCost = new GameObject[5];
-
             UnitCost = GameObject.FindGameObjectsWithTag("UnitCost");
-
             GameObject[] UnitImage = new GameObject[5];
-
             UnitImage = GameObject.FindGameObjectsWithTag("Button");
 
+            Array.Sort(UnitHp, (t1, t2) => t1.name.CompareTo(t2.name));
+            Array.Sort(UnitAtk, (t1, t2) => t1.name.CompareTo(t2.name));
+            Array.Sort(UnitCost, (t1, t2) => t1.name.CompareTo(t2.name));
+            Array.Sort(UnitImage, (t1, t2) => t1.name.CompareTo(t2.name));
 
 
             Card[0] = Resources.Load(DeckList0, typeof(GameObject)) as GameObject;
-
             Card[1] = Resources.Load(DeckList1, typeof(GameObject)) as GameObject;
-
             Card[2] = Resources.Load(DeckList2, typeof(GameObject)) as GameObject;
-
             Card[3] = Resources.Load(DeckList3, typeof(GameObject)) as GameObject;
-
             Card[4] = Resources.Load(DeckList4, typeof(GameObject)) as GameObject;
 
 
             for (int i = 0; i < 5; i++)
-
             {
-
                 Debug.Log(UnitHp[i].name);
-
                 UnitHp[i].GetComponent<Text>().text = Card[i].GetComponent<NewGameUnit>().HpMAX.ToString();
-
                 UnitAtk[i].GetComponent<Text>().text = Card[i].GetComponent<NewGameUnit>().AttackPower.ToString();
-
                 UnitCost[i].GetComponent<Text>().text = Card[i].GetComponent<NewGameUnit>().Cost.ToString();
-
                 UnitImage[i].GetComponent<Image>().sprite = Card[i].GetComponent<NewGameUnit>().sprite;
-
             }
 
             // NOM = GameObject.Find("NetObjects");

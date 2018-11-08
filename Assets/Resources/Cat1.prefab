@@ -1762,7 +1762,7 @@ MonoBehaviour:
   AttackPower: 20
   AttackDelay: 2
   MoveSpeed: 5
-  Cost: 3
+  Cost: 5
   sprite: {fileID: 21300000, guid: 90bee2d5fcdf4ec42b1cf02046cabfc5, type: 3}
   recoveryCounter: 0
   attackCooldownCounter: 0
