@@ -18,6 +18,7 @@ TagManager:
   - UnitCost
   - UnitAtk
   - Card
+  - NewSpawner
   layers:
   - Default
   - TransparentFX

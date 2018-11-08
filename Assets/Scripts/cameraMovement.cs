@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour {
 
     [SerializeField] Transform target;
-    [SerializeField] string targetTag = "Player";
+    [SerializeField] string targetTag = "NewSpawner";
 
     public float moveSpeed = 10f;
 	// Use this for initialization
@@ -13,11 +13,11 @@ public class CameraMovement : MonoBehaviour {
         if (HaveTarget)
         {
             Vector3 toPos = target.position + new Vector3(42.5f, 30f, 0);
-            if (toPos == new Vector3(42.5f, 30f, -110f))
+            if (toPos == new Vector3(42.5f, 30f, -70f))
             {
                 toPos += new Vector3(0, 0, 30f);
             }
-            if (toPos == new Vector3(42.5f, 30f, 110f))
+            if (toPos == new Vector3(42.5f, 30f, 70f))
             {
                 toPos -= new Vector3(0, 0, 30f);
             }
@@ -30,17 +30,17 @@ public class CameraMovement : MonoBehaviour {
 	void Update () {
         float h = Input.GetAxis("Horizontal");
 
-        if(transform.position.z < -80.0f)
+        if(transform.position.z < -40.0f)
         {
             Vector3 temp = new Vector3(transform.position.x,
                 transform.position.y,
-                -80.0f);
+                -40.0f);
             transform.position = temp;
-        } else if(transform.position.z > 60.0f)
+        } else if(transform.position.z > 40.0f)
         {
             Vector3 temp = new Vector3(transform.position.x,
                 transform.position.y,
-                60.0f);
+                40.0f);
             transform.position = temp;
         } else
         {

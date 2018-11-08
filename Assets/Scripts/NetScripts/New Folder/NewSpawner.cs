@@ -33,6 +33,8 @@ public class NewSpawner : NetworkBehaviour
     [SyncVar] public string DeckList3;
     [SyncVar] public string DeckList4;
     public GameObject[] Card = new GameObject[5];
+   
+
 
     [SyncVar] public bool cat;//?
 
@@ -66,23 +68,61 @@ public class NewSpawner : NetworkBehaviour
 
     public void Start()
     {
-        GameObject[] UnitHp = GameObject.FindGameObjectsWithTag("UnitHp");
-        GameObject[] UnitAtk = GameObject.FindGameObjectsWithTag("UnitAtk");
-        GameObject[] UnitCost = GameObject.FindGameObjectsWithTag("UnitCost");
-        GameObject[] UnitImage = GameObject.FindGameObjectsWithTag("Button");
+        
 
+        
         if (isLocalPlayer)
         {
 
             //gameObject.GetComponentInChildren<Renderer>().material.color = Color.blue;
             gameObject.name = HpBarName;
+            gameObject.tag = "NewSpawner";
+
+            GameObject[] UnitHp = new GameObject[5];
+
+            UnitHp = GameObject.FindGameObjectsWithTag("UnitHp");
+
+            GameObject[] UnitAtk = new GameObject[5];
+
+            UnitAtk = GameObject.FindGameObjectsWithTag("UnitAtk");
+
+            GameObject[] UnitCost = new GameObject[5];
+
+            UnitCost = GameObject.FindGameObjectsWithTag("UnitCost");
+
+            GameObject[] UnitImage = new GameObject[5];
+
+            UnitImage = GameObject.FindGameObjectsWithTag("Button");
 
 
-            Card[0] = Resources.Load(DeckList0) as GameObject;
-            Card[1] = Resources.Load(DeckList1) as GameObject;
-            Card[2] = Resources.Load(DeckList2) as GameObject;
-            Card[3] = Resources.Load(DeckList3) as GameObject;
-            Card[4] = Resources.Load(DeckList4) as GameObject;
+
+            Card[0] = Resources.Load(DeckList0, typeof(GameObject)) as GameObject;
+
+            Card[1] = Resources.Load(DeckList1, typeof(GameObject)) as GameObject;
+
+            Card[2] = Resources.Load(DeckList2, typeof(GameObject)) as GameObject;
+
+            Card[3] = Resources.Load(DeckList3, typeof(GameObject)) as GameObject;
+
+            Card[4] = Resources.Load(DeckList4, typeof(GameObject)) as GameObject;
+
+
+            for (int i = 0; i < 5; i++)
+
+            {
+
+                Debug.Log(UnitHp[i].name);
+
+                UnitHp[i].GetComponent<Text>().text = Card[i].GetComponent<NewGameUnit>().HpMAX.ToString();
+
+                UnitAtk[i].GetComponent<Text>().text = Card[i].GetComponent<NewGameUnit>().AttackPower.ToString();
+
+                UnitCost[i].GetComponent<Text>().text = Card[i].GetComponent<NewGameUnit>().Cost.ToString();
+
+                UnitImage[i].GetComponent<Image>().sprite = Card[i].GetComponent<NewGameUnit>().sprite;
+
+            }
+
             // NOM = GameObject.Find("NetObjects");
         }
         else
@@ -129,58 +169,6 @@ public class NewSpawner : NetworkBehaviour
         CmdInitialize(gameObject);
 
     }
-    IEnumerator WaitForReady()
-    {
-        while (!connectionToClient.isReady)
-        {
-            yield return new WaitForSeconds(0.25f);
-        }
-        //, "Prefabs/Base");
-    }
-    [Command]
-    public void CmdConCheck()
-    {
-        if (connectionToClient.isReady)
-        {
-
-            CmdInitialize(gameObject);
-        }
-        else
-        {
-            StartCoroutine("WaitForReady");
-            CmdInitialize(gameObject);
-        }
-
-    }
-    [Command]
-    public void CmdSetAuth()
-    {
-        NetworkIdentity spawnerIdentity = GetComponent<NetworkIdentity>();
-        if (!spawnerIdentity.localPlayerAuthority)
-        {
-            spawnerIdentity.localPlayerAuthority = true;
-        }
-        owner = isServer ? spawnerIdentity.connectionToClient : spawnerIdentity.connectionToServer;
-        /*
-        var iObject = NetworkServer.FindLocalObject(objectId);
-        var networkIdentity = iObject.GetComponent<NetworkIdentity>();
-        var otherOwner = networkIdentity.clientAuthorityOwner;
-
-        if (otherOwner == player.connectionToClient)
-        {
-            return;
-        }
-        else
-        {
-            if (otherOwner != null)
-            {
-                networkIdentity.RemoveClientAuthority(otherOwner);
-            }
-            networkIdentity.AssignClientAuthority(player.connectionToClient);
-        }
-        */
-    }
-
     [Command]
     public void CmdSetReadyFlag(bool value)
     {
@@ -246,9 +234,10 @@ public class NewSpawner : NetworkBehaviour
                 break;
         }
 
-        GameObject gameUnit = Instantiate(newGameUnitPrefab);
+        GameObject gameUnit = Instantiate(newGameUnitPrefab,transform.position,vec);
         //ClientScene.RegisterPrefab(gameUnit);
         gameUnit.name = gameUnit.name.Substring(0, gameUnit.name.Length - "(Clone)".Length);
+        //gameUnit.tag = "Player";
         gameUnit.transform.SetParent(transform);
         gameUnit.transform.position = transform.position;
         NewGameUnit b = gameUnit.GetComponent<NewGameUnit>();
@@ -259,7 +248,16 @@ public class NewSpawner : NetworkBehaviour
             changes.teamFactionID = (int)(UnityEngine.Random.value * 100f); //This is never to be changed.
         }
         TeamID = changes.teamFactionID;
+        changes.isCommanded = false;
+        changes.isMoving = true;
+        //changes.alphavalue = 1;
+        CmdUpdateUnitProperty(gameUnit, changes);
+        /*if (gameUnit.tag == "Player")
+        {
+            
+        }*/
         b.NewProperty(changes);
+
         //NetworkServer.SpawnWithClientAuthority(b.gameObject, spawnerID.clientAuthorityOwner);
         //ClientScene.RegisterPrefab(b.gameObject);
         NetworkServer.Spawn(b.gameObject);
@@ -277,29 +275,6 @@ public class NewSpawner : NetworkBehaviour
         //newGameUnitPrefab = b.gameObject;*/
     }
 
-    void OnReady(NetworkMessage netMsg)
-    {
-        NetworkIdentity spawnerID = this.GetComponent<NetworkIdentity>();
-        GameObject spawner = this.gameObject;
-
-        GameObject gameUnit = Instantiate(newGameUnitPrefab);
-        gameUnit.name = gameUnit.name.Substring(0, gameUnit.name.Length - "(Clone)".Length);
-        gameUnit.transform.SetParent(transform);
-        gameUnit.transform.position = transform.position;
-        NewGameUnit b = gameUnit.GetComponent<NewGameUnit>();
-        NewChanges changes = b.CurrentProperty();
-        if (!changes.isInitialized)
-        {
-            changes.isInitialized = false;
-            changes.teamFactionID = (int)(UnityEngine.Random.value * 100f); //This is never to be changed.
-        }
-        TeamID = changes.teamFactionID;
-        b.NewProperty(changes);
-        NetworkServer.SpawnWithClientAuthority(b.gameObject, spawnerID.clientAuthorityOwner);
-        RpcAdd(gameUnit, spawner);
-        RpcFilter(b.netId, spawnerID.netId);
-    }
-
     [ClientRpc]
     public void RpcFilter(NetworkInstanceId unitID, NetworkInstanceId spawnerID)
     {
@@ -308,13 +283,7 @@ public class NewSpawner : NetworkBehaviour
         GameObject spawnerObject = ClientScene.FindLocalObject(spawnerID);
         obj.transform.SetParent(spawnerObject.transform);
         NewGameUnit unit = obj.GetComponent<NewGameUnit>();
-        if (unit.tag == "Player")
-        {
-            changes = unit.CurrentProperty();
-            changes.isCommanded = false;
-            changes.isMoving = true;
-            CmdUpdateUnitProperty(unit.gameObject, changes);
-        }
+        
         if (unit.hasAuthority)
         {
             //Camera Setup
@@ -371,11 +340,11 @@ public class NewSpawner : NetworkBehaviour
     }
 
     [Command]
-    public void CmdSplitSpawn(GameObject spawn,GameObject owner)//, NetworkIdentity ownerIdentity)
+    public void CmdSplitSpawn(string goname,GameObject owner)//, NetworkIdentity ownerIdentity)
     {
         //NetworkIdentity spawnerID = this.GetComponent<NetworkIdentity>();
 
-        GameObject split = Instantiate(spawn, gameObject.transform.position, vec);
+        var split = (GameObject)Instantiate(Resources.Load(goname,typeof(GameObject)), gameObject.transform.position, vec);
 
         split.name = "NewGameUnit";
         split.transform.SetParent(transform);
@@ -383,6 +352,7 @@ public class NewSpawner : NetworkBehaviour
         NewGameUnit unit = split.GetComponent<NewGameUnit>();
         NewChanges changes = unit.CurrentProperty();
         changes.teamFactionID = TeamID;
+        changes.alphavalue = 0.4f;
         unit.NewProperty(changes);
         NetworkServer.SpawnWithClientAuthority(unit.gameObject, owner.gameObject.GetComponent<NetworkIdentity>().clientAuthorityOwner);
         //NetworkServer.Spawn(unit.gameObject);
@@ -454,7 +424,7 @@ public class NewSpawner : NetworkBehaviour
             if (Card[0].GetComponent<NewGameUnit>().Cost < source)
             {
                 source -= Card[0].GetComponent<NewGameUnit>().Cost;
-                CmdSplitSpawn(Card[0],gameObject);
+                CmdSplitSpawn(DeckList0, gameObject);
             }
             //, gameObject.GetComponent<NetworkIdentity>());
             /*foreach(NewUnitStruct temp in unitList)
@@ -474,7 +444,7 @@ public class NewSpawner : NetworkBehaviour
             if (Card[1].GetComponent<NewGameUnit>().Cost < source)
             {
                 source -= Card[1].GetComponent<NewGameUnit>().Cost;
-                CmdSplitSpawn(Card[1],gameObject);
+                CmdSplitSpawn(DeckList1, gameObject);
             }
 
         }
@@ -483,7 +453,7 @@ public class NewSpawner : NetworkBehaviour
             if (Card[2].GetComponent<NewGameUnit>().Cost < source)
             {
                 source -= Card[2].GetComponent<NewGameUnit>().Cost;
-                CmdSplitSpawn(Card[2],gameObject);
+                CmdSplitSpawn(DeckList2, gameObject);
             }
 
         }
@@ -492,7 +462,7 @@ public class NewSpawner : NetworkBehaviour
             if (Card[3].GetComponent<NewGameUnit>().Cost < source)
             {
                 source -= Card[3].GetComponent<NewGameUnit>().Cost;
-                CmdSplitSpawn(Card[3],gameObject);
+                CmdSplitSpawn(DeckList3, gameObject);
             }
 
         }
@@ -501,7 +471,7 @@ public class NewSpawner : NetworkBehaviour
             if (Card[4].GetComponent<NewGameUnit>().Cost < source)
             {
                 source -= Card[4].GetComponent<NewGameUnit>().Cost;
-                CmdSplitSpawn(Card[4],gameObject);
+                CmdSplitSpawn(DeckList4, gameObject);
             }
 
         }
@@ -523,7 +493,7 @@ public class NewSpawner : NetworkBehaviour
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
-                if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000f) && hit.collider.tag == "ground")
+                if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000f) && hit.collider.tag == "ground" && unit.tag != "Player")
                 {
                     changes = unit.CurrentProperty();
                     changes.mousePosition = hit.point;

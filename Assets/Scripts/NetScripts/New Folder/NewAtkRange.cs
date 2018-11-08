@@ -59,21 +59,19 @@ public class NewAtkRange : MonoBehaviour
             if (this.detectedUnits.Count > 0)
             {
                 NewChanges changes = this.parent.CurrentProperty();
-                if (this.detectedUnits[0] != null)  //should fix;
+                if (this.detectedUnits[0] != null && detectedUnits[0].properties.currentHealth > 0)  //should fix;
                 {
                     Debug.Log("NiceTarget");
                     changes.targetUnit = this.detectedUnits[0].gameObject;
                     this.parent.CallCmdupdateProperty(changes);
                 }
-                /*else if (detectedUnits[0] != null && detectedUnits[0].properties.currentHealth <= 0)
+                else
                 {
-                    {
-                        Debug.Log("CurrentTargetDead");
-                        detectedUnits.Remove(detectedUnits[0]);
-                        return;
+                    Debug.Log("CurrentTargetDead");
+                    detectedUnits.Remove(detectedUnits[0]);
+                    return;
 
-                    }
-                }*/
+                }
                     
                     
                     //changes.enemyHitPosition = this.detectedUnits[0].transform.position;

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114277956681420924}
   m_Layer: 0
   m_Name: NewSpawner
-  m_TagString: Untagged
+  m_TagString: NewSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,16 +104,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TeamColor: {r: 0, g: 0, b: 0, a: 0}
   HpBarName: 
-  DeckList:
-  - 
-  - 
-  - 
-  - 
-  - 
+  DeckList0: 
+  DeckList1: 
+  DeckList2: 
+  DeckList3: 
+  DeckList4: 
+  Card0: {fileID: 0}
+  Card1: {fileID: 0}
+  Card2: {fileID: 0}
+  Card3: {fileID: 0}
+  Card4: {fileID: 0}
   cat: 0
-  newGameUnitPrefab: {fileID: 1081966240325794, guid: 0bc2bf3812418424ea1733bacf9a1d26,
+  newGameUnitPrefab: {fileID: 1670378532577692, guid: 69bbd88ce931cf94eb424b1661f8a71e,
     type: 2}
-  Cat: {fileID: 1043871024511146, guid: 236927d108dfab84b88addb48f1d1340, type: 2}
   CardUI: {fileID: 1646242538963088, guid: 5008cf2b9d7916548ae93bfe220a46bd, type: 2}
   Underbar: {fileID: 0}
   source: 0

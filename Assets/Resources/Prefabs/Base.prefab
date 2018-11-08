@@ -386,6 +386,8 @@ MonoBehaviour:
   AttackPower: 0
   AttackDelay: 0
   MoveSpeed: 0
+  Cost: 0
+  sprite: {fileID: 0}
   recoveryCounter: 0
   attackCooldownCounter: 0
   takeDamageCounter: 0

@@ -222,7 +222,7 @@ namespace Prototype.NetworkLobby
         public void OnReadyClicked()
         {
             deckButton.gameObject.SetActive(false);
-            GameObject.Find("LobbyManager").GetComponent<LobbyDeck>().enabled = true;
+            GameObject.Find("LobbyManager").GetComponent<LobbyDeck>().enabled = false;
             SendReadyToBeginMessage();
         }
 

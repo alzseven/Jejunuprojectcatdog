@@ -1795,6 +1795,7 @@ MonoBehaviour:
   AttackDelay: 2
   MoveSpeed: 5
   Cost: 3
+  sprite: {fileID: 21300000, guid: 968fb5de01ff8c5409138a64a32fa5ee, type: 3}
   recoveryCounter: 0
   attackCooldownCounter: 0
   takeDamageCounter: 0

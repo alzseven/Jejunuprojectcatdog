@@ -75,9 +75,9 @@ public class NewGameUnit : NetworkBehaviour
 
     public delegate void UpdateProperties(NewChanges changes);
     public UpdateProperties updateProperties;
-    [SerializeField] private int HpMAX;
+    public int HpMAX;
     [SerializeField] private int HP;
-    [SerializeField] private int AttackPower;
+    public int AttackPower;
     [SerializeField] private float AttackDelay;
     [SerializeField] private int MoveSpeed;
     public int Cost;
@@ -142,7 +142,7 @@ public class NewGameUnit : NetworkBehaviour
             properties.attackFactor = AttackPower;
             properties.speedFactor = MoveSpeed;
             properties.attackCooldownFactor = AttackDelay;
-            properties.alphacolor = 0.4f;
+            properties.alphacolor = 1f;
             this.properties.targetUnit = null;
 
             this.updateProperties += NewProperty;
@@ -150,8 +150,16 @@ public class NewGameUnit : NetworkBehaviour
             this.isDead = false;
             return;
         }
+        
 
-
+        /*if(gameObject.tag == "Player")
+        {
+            NewChanges changes = unit.CurrentProperty();
+            changes.isCommanded = false;
+            changes.isMoving = true;
+            changes.alphavalue = 1;
+            CmdUpdateUnitProperty(unit.gameObject, changes);
+        }*/
 
 
         if (HandleStatus())
@@ -188,16 +196,22 @@ public class NewGameUnit : NetworkBehaviour
 
         pro.alphacolor = changes.alphavalue;
         Renderer[] renderer = GetComponentsInChildren<Renderer>();
-        Material[] Mat = new Material[4];
+        foreach(Renderer R in renderer)
+        {
+            Color color = R.material.color;
+            color.a = changes.alphavalue;
+            R.material.color = color;
+        }
+        /*Material[] Mat = new Material[4];
         Color[] col = new Color[4];
         for (int i = 0; i < 4; i++)
         {
             //renderer[i].material.SetColor("_Basic Outline-Alpha", new Color(0, 0, 0, changes.alphavalue));
             Mat[i] = renderer[i].material; //Cannot use Setcolor function on arrays
-            col[i] = Mat[i].color;
-            col[i].a = changes.alphavalue;
+            //col[i] = ;
+            col[i] = new Color(Mat[i].color.r, Mat[i].color.g, Mat[i].color.b, changes.alphavalue);
             Mat[i].color = col[i];
-        }
+        }*/
 
 
         OnPropertiesChanged(pro);
@@ -242,16 +256,22 @@ public class NewGameUnit : NetworkBehaviour
     public void AlphaChange(float a)
     {
         Renderer[] renderer = GetComponentsInChildren<Renderer>();
-        Material[] Mat = new Material[4];
+        foreach (Renderer R in renderer)
+        {
+            Color color = R.material.color;
+            color.a = a;
+            R.material.color = color;
+        }
+        /*Material[] Mat = new Material[4];
         Color[] col = new Color[4];
         for (int i = 0; i < 4; i++)
         {
             //renderer[i].material.SetColor("_Basic Outline-Alpha", new Color(0, 0, 0, a));
             Mat[i] = renderer[i].material; //Cannot use Setcolor function on arrays
-            col[i] = Mat[i].color;
-            col[i].a = a;
+            //col[i] = Mat[i].color;
+            col[i] = new Color(Mat[i].color.r, Mat[i].color.g, Mat[i].color.b, a);
             Mat[i].color = col[i];
-        }
+        }*/
     }
     public float GetAlphaCol() //
     {
