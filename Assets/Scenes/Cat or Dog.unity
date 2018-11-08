@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -122,6 +122,11 @@ MonoBehaviour:
 --- !u!1 &240917427 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1443743063610024, guid: c0978251ff7b10d4fb954a4b56acd9f0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1812679145}
+--- !u!224 &494278973 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224827156600034270, guid: c0978251ff7b10d4fb954a4b56acd9f0,
     type: 2}
   m_PrefabInternal: {fileID: 1812679145}
 --- !u!1 &786613837
@@ -544,6 +549,11 @@ Prefab:
       propertyPath: m_PlayerSpawnMethod
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114642611889559486, guid: c0978251ff7b10d4fb954a4b56acd9f0,
+        type: 2}
+      propertyPath: deckPanel
+      value: 
+      objectReference: {fileID: 494278973}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
   m_IsPrefabParent: 0

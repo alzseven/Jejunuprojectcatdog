@@ -876,6 +876,13 @@ MonoBehaviour:
   remoteIcone: {fileID: 189178}
   playerName: 
   playerColor: {r: 1, g: 1, b: 1, a: 1}
+  decklist:
+  - 
+  - 
+  - 
+  - 
+  - 
+  cat: 1
   OddRowColor: {r: 0.98039216, g: 0.98039216, b: 0.98039216, a: 1}
   EvenRowColor: {r: 0.7058824, g: 0.7058824, b: 0.7058824, a: 1}
 --- !u!114 &11487112
@@ -1218,7 +1225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -149.80005, y: 0}
+  m_AnchoredPosition: {x: -201, y: 0}
   m_SizeDelta: {x: 176, y: 52}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!224 &22436984
@@ -1570,7 +1577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1688257944075244
 GameObject:
   m_ObjectHideFlags: 1
@@ -1728,7 +1735,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -149.8, y: 0}
+  m_AnchoredPosition: {x: -14, y: 0}
   m_SizeDelta: {x: 176, y: 52}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!224 &224900704089447744

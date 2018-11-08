@@ -14,10 +14,10 @@ namespace Prototype.NetworkLobby
         public RectTransform lobbyPanel;
 
         public GameObject Cat, Dog;
-        private GameObject[] allcard=new GameObject[10];
+        private GameObject[] allcard = new GameObject[10];
 
         //저장해야할 변수들
-        static public string[] decklist=new string[5];
+        static public string[] decklist = new string[5];
         static bool cat = true;
 
         protected RectTransform currentPanel;
@@ -29,7 +29,7 @@ namespace Prototype.NetworkLobby
 
         void Update()
         {
-            
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000f))
@@ -97,22 +97,22 @@ namespace Prototype.NetworkLobby
                 Temp1.transform.localPosition = new Vector3(-710 + i * 220, 300, 0);
                 Temp1.name = tribe + i;
                 Temp1.GetComponent<Image>().sprite = sprite[i];
-                allcard[i]=Temp1;
+                allcard[i] = Temp1;
 
                 int x = i + 5;                                                                                  //둘째줄
                 Transform parent2 = GameObject.Find("Slot" + x).GetComponent<Transform>();
                 GameObject Temp2 = Instantiate(card, Vector3.zero, Quaternion.identity) as GameObject;
                 Temp2.transform.SetParent(parent2);
-                Temp2.transform.localScale = new Vector3(1.5f,2.4f, 0);
+                Temp2.transform.localScale = new Vector3(1.5f, 2.4f, 0);
                 Temp2.transform.localPosition = new Vector3(-710 + i * 220, 0, 0);
                 Temp2.name = tribe + x;
                 Temp2.GetComponent<Image>().sprite = sprite[x];
-                allcard[x]=Temp2;
+                allcard[x] = Temp2;
 
             }
         }
 
-        
+
         public void StartButton()               //DECK 패널에 있는 PLAY버튼을 눌렀을 경우
         {
             int slot0 = 0, slot1 = 0, slot2 = 0, slot3 = 0, slot4 = 0;
@@ -133,22 +133,21 @@ namespace Prototype.NetworkLobby
                 lobbyPanel.gameObject.SetActive(true);
                 GameObject[] tempobj = GameObject.FindGameObjectsWithTag("PlayerInfo");
                 LobbyPlayer[] templobbyplayer = new LobbyPlayer[2];
-                for (int i = 0; i<2; i++)
+                for (int i = 0; i < 2; i++)
                 {
                     templobbyplayer[i] = tempobj[i].GetComponent<LobbyPlayer>();
-                }    
-                for(int i = 0; i<5; i++)
+                }
+                for (int i = 0; i < 5; i++)
                 {
                     templobbyplayer[0].decklist[i] = decklist[i];
                     templobbyplayer[0].cat = cat;
                     templobbyplayer[1].decklist[i] = decklist[i];
                     templobbyplayer[1].cat = cat;
                 }
-                
-                tempobj[0].GetComponent<LobbyPlayer>().ToggleJoinButton(true,true);
-                tempobj[1].GetComponent<LobbyPlayer>().ToggleJoinButton(true,true);
 
-                this.enabled = false;
+                tempobj[0].GetComponent<LobbyPlayer>().ToggleJoinButton(true, true);
+                tempobj[1].GetComponent<LobbyPlayer>().ToggleJoinButton(true, true);
+
 
             }
             else
@@ -178,15 +177,15 @@ namespace Prototype.NetworkLobby
 
         public void TopPanelBackButton()    //TOP패널에 있는 BACK버튼을 눌렀을 경우
         {
-            if (currentPanel==deckPanel)
+            if (currentPanel == deckPanel)
                 DeleteAllCard();
             if (currentPanel.gameObject.activeSelf)
                 currentPanel.gameObject.SetActive(false);
         }
 
-        void DeleteAllCard()                //DECK패널에 있는 카드들 삭제, 텍스트초기화(예정)
+        public void DeleteAllCard()                //DECK패널에 있는 카드들 삭제, 텍스트초기화(예정)
         {
-            for(int i=0; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 Destroy(allcard[i]);
             }
