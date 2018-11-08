@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.Collections.Generic;
 using System.Collections;
@@ -26,9 +27,12 @@ public class NewSpawner : NetworkBehaviour
 {
     [SyncVar] public Color TeamColor;
     [SyncVar] public string HpBarName;
-    public string[] DeckList = new string[5];
+    [SyncVar] public string DeckList0;
+    [SyncVar] public string DeckList1;
+    [SyncVar] public string DeckList2;
+    [SyncVar] public string DeckList3;
+    [SyncVar] public string DeckList4;
     public GameObject[] Card = new GameObject[5];
-    //public GameObject[] CatCardList = new GameObject[10];
 
     [SyncVar] public bool cat;//?
 
@@ -62,17 +66,23 @@ public class NewSpawner : NetworkBehaviour
 
     public void Start()
     {
+        GameObject[] UnitHp = GameObject.FindGameObjectsWithTag("UnitHp");
+        GameObject[] UnitAtk = GameObject.FindGameObjectsWithTag("UnitAtk");
+        GameObject[] UnitCost = GameObject.FindGameObjectsWithTag("UnitCost");
+        GameObject[] UnitImage = GameObject.FindGameObjectsWithTag("Button");
+
         if (isLocalPlayer)
         {
 
             //gameObject.GetComponentInChildren<Renderer>().material.color = Color.blue;
             gameObject.name = HpBarName;
 
-            for(int i = 0; i < 5; i++)
-            {
-                Card[i] = Resources.Load(DeckList[i]) as GameObject;
-                ClientScene.RegisterPrefab(Card[i]);
-            }
+
+            Card[0] = Resources.Load(DeckList0) as GameObject;
+            Card[1] = Resources.Load(DeckList1) as GameObject;
+            Card[2] = Resources.Load(DeckList2) as GameObject;
+            Card[3] = Resources.Load(DeckList3) as GameObject;
+            Card[4] = Resources.Load(DeckList4) as GameObject;
             // NOM = GameObject.Find("NetObjects");
         }
         else

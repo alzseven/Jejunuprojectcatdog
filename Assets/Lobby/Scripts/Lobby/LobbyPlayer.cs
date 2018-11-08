@@ -358,5 +358,12 @@ namespace Prototype.NetworkLobby
             lobbyPanel.gameObject.SetActive(false);
         }
 
+        public void DeckSave(string[] Tempdeck,bool Tempcat)
+        {
+            if (!isLocalPlayer)
+                return;
+            cat = Tempcat;
+            decklist = Tempdeck;
+        }
     }
 }

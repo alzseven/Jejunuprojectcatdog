@@ -81,6 +81,7 @@ public class NewGameUnit : NetworkBehaviour
     [SerializeField] private float AttackDelay;
     [SerializeField] private int MoveSpeed;
     public int Cost;
+    public Sprite sprite;
 
     [SerializeField]
     private float recoveryCounter;

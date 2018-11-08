@@ -137,14 +137,10 @@ namespace Prototype.NetworkLobby
                 {
                     templobbyplayer[i] = tempobj[i].GetComponent<LobbyPlayer>();
                 }
-                for (int i = 0; i < 5; i++)
-                {
-                    templobbyplayer[0].decklist[i] = decklist[i];
-                    templobbyplayer[0].cat = cat;
-                    templobbyplayer[1].decklist[i] = decklist[i];
-                    templobbyplayer[1].cat = cat;
-                }
 
+
+                tempobj[0].GetComponent<LobbyPlayer>().DeckSave(decklist,cat);
+                tempobj[1].GetComponent<LobbyPlayer>().DeckSave(decklist,cat);
                 tempobj[0].GetComponent<LobbyPlayer>().ToggleJoinButton(true, true);
                 tempobj[1].GetComponent<LobbyPlayer>().ToggleJoinButton(true, true);
 

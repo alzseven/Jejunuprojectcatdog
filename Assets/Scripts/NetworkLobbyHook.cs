@@ -18,10 +18,11 @@ public class NetworkLobbyHook : LobbyHook
 
         NS.TeamColor = lobby.playerColor;
         NS.HpBarName = lobby.playerName;
-        for (int i = 0; i < 5; i++)
-        {
-            NS.DeckList[i] = lobby.decklist[i];
-        }
+        NS.DeckList0 = lobby.decklist[0];
+        NS.DeckList1 = lobby.decklist[1];
+        NS.DeckList2 = lobby.decklist[2];
+        NS.DeckList3 = lobby.decklist[3];
+        NS.DeckList4 = lobby.decklist[4];
         NS.cat = lobby.cat;
     }
 }
